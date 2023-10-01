@@ -9,7 +9,6 @@
     <title>Chirkut URL</title>
 
     <style>
-
         @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@600&display=swap');
 
         body {
@@ -29,7 +28,6 @@
         h1, h2 {
             font-size: 3rem;
             color: #A6F6FF;
-            /*text-decoration-line: underline;*/
             margin: 1rem 0;
             padding: 0.5rem;
         }
@@ -37,7 +35,6 @@
         h2 {
             font-size: 1.5rem;
             margin-bottom: 2rem;
-            text-decoration-line: underline;
         }
 
         p {
@@ -48,7 +45,8 @@
         }
 
         table {
-            width: 80%;
+            width: 100%;
+            max-width: 800px; /* Adjust as needed */
             margin: 0 auto;
             border-collapse: collapse;
             margin-bottom: 2rem;
@@ -65,7 +63,8 @@
         }
 
         .original-url a, .short-url a {
-            font-family: 'AR One Sans', sans-serif;            text-decoration: none;
+            font-family: 'AR One Sans', sans-serif;
+            text-decoration: none;
             color: rgba(73, 73, 73, 0.91);
             transition: color 0.3s ease-in-out;
         }
@@ -78,14 +77,266 @@
             color: #FFD700;
             transform: scale(1.1);
         }
-        .tracking-in-expand{animation:tracking-in-expand 2s cubic-bezier(.215,.61,.355,1.000) infinite alternate-reverse both}
-        @keyframes tracking-in-expand{0%{letter-spacing:-.5em;opacity:0}40%{opacity:.6}100%{opacity:1}}
 
-        .text-flicker-in-glow{animation:text-flicker-in-glow 3.5s linear both}
-        @keyframes text-flicker-in-glow{0%{opacity:0}10%{opacity:0;text-shadow:none}10.1%{opacity:1;text-shadow:none}10.2%{opacity:0;text-shadow:none}20%{opacity:0;text-shadow:none}20.1%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.25)}20.6%{opacity:0;text-shadow:none}30%{opacity:0;text-shadow:none}30.1%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.45),0 0 60px rgba(255,255,255,.25)}30.5%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.45),0 0 60px rgba(255,255,255,.25)}30.6%{opacity:0;text-shadow:none}45%{opacity:0;text-shadow:none}45.1%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.45),0 0 60px rgba(255,255,255,.25)}50%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.45),0 0 60px rgba(255,255,255,.25)}55%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.45),0 0 60px rgba(255,255,255,.25)}55.1%{opacity:0;text-shadow:none}57%{opacity:0;text-shadow:none}57.1%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.55),0 0 60px rgba(255,255,255,.35)}60%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.55),0 0 60px rgba(255,255,255,.35)}60.1%{opacity:0;text-shadow:none}65%{opacity:0;text-shadow:none}65.1%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.55),0 0 60px rgba(255,255,255,.35),0 0 100px rgba(255,255,255,.1)}75%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.55),0 0 60px rgba(255,255,255,.35),0 0 100px rgba(255,255,255,.1)}75.1%{opacity:0;text-shadow:none}77%{opacity:0;text-shadow:none}77.1%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.55),0 0 60px rgba(255,255,255,.4),0 0 110px rgba(255,255,255,.2),0 0 100px rgba(255,255,255,.1)}85%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.55),0 0 60px rgba(255,255,255,.4),0 0 110px rgba(255,255,255,.2),0 0 100px rgba(255,255,255,.1)}85.1%{opacity:0;text-shadow:none}86%{opacity:0;text-shadow:none}86.1%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.6),0 0 60px rgba(255,255,255,.45),0 0 110px rgba(255,255,255,.25),0 0 100px rgba(255,255,255,.1)}100%{opacity:1;text-shadow:0 0 30px rgba(255,255,255,.6),0 0 60px rgba(255,255,255,.45),0 0 110px rgba(255,255,255,.25),0 0 100px rgba(255,255,255,.1)}}
+        .form-text{
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-decoration-line: underline;
+        }
+
+        .tracking-in-expand {
+            animation: tracking-in-expand 2s cubic-bezier(.215, .61, .355, 1.000) infinite alternate-reverse both
+        }
+
+        @keyframes tracking-in-expand {
+            0% {
+                letter-spacing: -.5em;
+                opacity: 0
+            }
+
+            40% {
+                opacity: .6
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+
+        .text-flicker-in-glow {
+            animation: text-flicker-in-glow 3.5s linear both
+        }
+
+        @keyframes text-flicker-in-glow {
+            0% {
+                opacity: 0
+            }
+
+            10% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            10.1% {
+                opacity: 1;
+                text-shadow: none
+            }
+
+            10.2% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            20% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            20.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .25)
+            }
+
+            20.6% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            30% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            30.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
+            }
+
+            30.5% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
+            }
+
+            30.6% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            45% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            45.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
+            }
+
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
+            }
+
+            55% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .45), 0 0 60px rgba(255, 255, 255, .25)
+            }
+
+            55.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            57% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            57.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35)
+            }
+
+            60% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35)
+            }
+
+            60.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            65% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            65.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35), 0 0 100px rgba(255, 255, 255, .1)
+            }
+
+            75% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .35), 0 0 100px rgba(255, 255, 255, .1)
+            }
+
+            75.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            77% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            77.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .4), 0 0 110px rgba(255, 255, 255, .2), 0 0 100px rgba(255, 255, 255, .1)
+            }
+
+            85% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .55), 0 0 60px rgba(255, 255, 255, .4), 0 0 110px rgba(255, 255, 255, .2), 0 0 100px rgba(255, 255, 255, .1)
+            }
+
+            85.1% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            86% {
+                opacity: 0;
+                text-shadow: none
+            }
+
+            86.1% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .6), 0 0 60px rgba(255, 255, 255, .45), 0 0 110px rgba(255, 255, 255, .25), 0 0 100px rgba(255, 255, 255, .1)
+            }
+
+            100% {
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(255, 255, 255, .6), 0 0 60px rgba(255, 255, 255, .45), 0 0 110px rgba(255, 255, 255, .25), 0 0 100px rgba(255, 255, 255, .1)
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 90%;
+            max-width: 400px; /* Adjust as needed */
+            box-sizing: border-box;
+            background-color: #1B1B1B;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            background-clip: padding-box;
+            animation: multicolorBorder 5s infinite ease-in-out;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        @keyframes multicolorBorder {
+            0% {
+                border: 2px solid #eedc77;
+            }
+            25% {
+                border: 2px solid #70f570;
+            }
+            50% {
+                border: 2px solid #FF1493;
+            }
+            75% {
+                border: 2px solid #00FFFF;
+            }
+            100% {
+                border: 2px solid #FF6347;
+            }
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #D7E5CA;
+            color: #1B1B1B;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, alternate-reverse;
+            box-shadow: 7px 4px 8px rgba(255, 255, 255, 0.5);
+        }
+
+        button:hover {
+            background-color: #A6F6FF;
+            transform: scale(1.05);
+            box-shadow: -8px 8px 16px rgba(255, 255, 255, 0.2);
+        }
+        .vibrate-1{-webkit-animation:vibrate-1 .8s linear infinite alternate-reverse both;animation:vibrate-1 .8s linear infinite alternate-reverse both}
+        @-webkit-keyframes vibrate-1{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}40%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}60%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}80%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}@keyframes vibrate-1{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}40%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}60%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}80%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}
+
+
+
+
+
+
         @media screen and (max-width: 600px) {
             table {
                 width: 100%;
+                max-width: 90%; /* Adjust as needed */
             }
 
             th, td {
@@ -97,16 +348,29 @@
             th {
                 text-align: center;
             }
+
+            input {
+                width: 100%;
+            }
         }
+
     </style>
 </head>
 
 <body>
 
 <h1 class="tracking-in-expand">Chirkut</h1>
-<h2 class ="text-flicker-in-glow">- Inspired from the real happenings of <em> Oggy and the cockroaches </em></h2>
+<h2 class="text-flicker-in-glow">- Inspired from the "real" happenings of <em>Oggy and the cockroaches</em></h2>
 <p><b>Oggy</b>: Bhaiya, wo dekhiye url...!</p>
 <p><b>Jack</b>: Oggy ye to chirkut h, ise to main tod dunga, fod dunga neebu ke jaise nichod dunga</p>
+
+<div class="form-container">
+    <form  action="/api/v1/url/:shortUrl" method="POST">
+        <label class="form-text" for="urlInput">Enter URL&#x1F447;</label>
+        <input type="text" id="urlInput" name="urlInput" placeholder="Url Cutter" required>
+        <button class="vibrate-1" type="submit" class="btn-animated">Shorten URL</button>
+    </form>
+</div>
 
 <table>
     <thead>
