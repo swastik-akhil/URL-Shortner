@@ -5,8 +5,7 @@ This elegant backend application utilizes the power of **Node.js**, **Express**,
 
 
 
-
-![Logo](https://mir-s3-cdn-cf.behance.net/projects/404/8eec89176281219.Y3JvcCw4MDgsNjMyLDAsMA.png)
+![Display](https://github.com/swastik-akhil/URL-Shortner/assets/126651810/bb2a6b15-53f3-4b0d-b769-251476cc5d76)
 
 
 ## Authors
