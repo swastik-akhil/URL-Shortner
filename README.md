@@ -43,7 +43,7 @@ Start the server
 
 **Database:** MongoDB
 
-**Templating Engine** ejs
+**Templating Engine:** ejs
 
 
 ## Environment Variables
