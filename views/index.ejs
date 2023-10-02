@@ -85,7 +85,7 @@
         }
 
         .tracking-in-expand {
-            animation: tracking-in-expand 2s cubic-bezier(.215, .61, .355, 1.000) infinite alternate-reverse both
+            animation: tracking-in-expand 2s cubic-bezier(.215, .61, .355, 1.000) 3.5s infinite alternate-reverse both
         }
 
         @keyframes tracking-in-expand {
@@ -105,6 +105,10 @@
 
         .text-flicker-in-glow {
             animation: text-flicker-in-glow 3.5s linear both
+        }
+        .text-flicker-in-glow-2 {
+            animation: text-flicker-in-glow 1.5s linear infinite alternate-reverse both;
+            /*animation-delay: 3.5s;*/
         }
 
         @keyframes text-flicker-in-glow {
@@ -329,10 +333,6 @@
         @-webkit-keyframes vibrate-1{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}40%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}60%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}80%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}@keyframes vibrate-1{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}40%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}60%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}80%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}
 
 
-
-
-
-
         @media screen and (max-width: 600px) {
             table {
                 width: 100%;
@@ -340,34 +340,55 @@
             }
 
             th, td {
-                display: block;
-                width: 100%;
                 box-sizing: border-box;
+                text-align: center;
             }
 
             th {
                 text-align: center;
             }
 
+            .original-url, .short-url, td {
+                overflow-wrap: break-word;
+                max-width: 150px; /* Adjust the max-width as needed */
+            }
+
+            /* Increase max-width for URLs with queries */
+            .original-url a[href*="?"] {
+                max-width: 300px; /* Adjust the max-width for URLs with queries */
+            }
+
             input {
                 width: 100%;
             }
+            
+            .form-container {
+                width: 100%;
+                max-width: 100%;
+            }
         }
+
+
+
+
+
+
 
     </style>
 </head>
 
 <body>
 
-<h1 class="tracking-in-expand">Chirkut</h1>
-<h2 class="text-flicker-in-glow">- Inspired from the "real" happenings of <em>Oggy and the cockroaches</em></h2>
-<p><b>Oggy</b>: Bhaiya, wo dekhiye url...!</p>
+<h1>Chirkut<span class="tracking-in-expand">&#129295;</span></h1>
+<h2 class="text-flicker-in-glow">- Inspired from the "real" happenings of <em>Oggy and the cockroaches</em><span class="text-flicker-in-glow-2"> &#9985;</span></h2>
+<!--<h2 class="text-flicker-in-glow">&#9985;</h2>-->
+<p><b>Oggy</b>: Bhaiya wo dekhiye, inta bda url...!</p>
 <p><b>Jack</b>: Oggy ye to chirkut h, ise to main tod dunga, fod dunga neebu ke jaise nichod dunga</p>
 
 <div class="form-container">
     <form  action="/api/v1/url/:shortUrl" method="POST">
         <label class="form-text" for="urlInput">Enter URL&#x1F447;</label>
-        <input type="text" id="urlInput" name="urlInput" placeholder="Url Cutter" required>
+        <input type="text" id="urlInput" name="url" placeholder="Url Cutter &#x2702;" required>
         <button class="vibrate-1" type="submit" class="btn-animated">Shorten URL</button>
     </form>
 </div>
@@ -390,6 +411,8 @@
     <% }) %>
     </tbody>
 </table>
+
+
 </body>
 
 </html>

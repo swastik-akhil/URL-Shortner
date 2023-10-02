@@ -6,6 +6,7 @@ router.route('/')
 	.post(getShortId)
 router.route('/:shortUrl')
 	.get(getRedirectUrl)
+
 router.route('/analytics/:shortUrl')
 	.get(getAnalytics)
 

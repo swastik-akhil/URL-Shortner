@@ -1,5 +1,6 @@
 const shortid = require('shortid');
 const URL = require('../models/url');
+const {PORT} = process.env;
 
 async function getShortId(req, res) {
 	const body = req.body;
@@ -14,16 +15,14 @@ async function getShortId(req, res) {
 		redirectUrl: body.url,
 		visitHistory: []
 	});
+	return res.render('urlGenerated', {
+		shortId : newUrl.shortId,
+		PORT : PORT
 
-	return res.json({ shortIdGenerated: newUrl.shortId, redirectUrl: newUrl.redirectUrl});
+	})
+	// return res.json({ shortIdGenerated: newUrl.shortId, redirectUrl: newUrl.redirectUrl});
 }
 
-// async function getRedirectUrl(req, res) {
-// 	// const body = req.body;
-// 	const reqUrl = req.params.shortUrl;
-// 	const result = await URL.findOne({shortId : reqUrl});
-// 	return res.status(200).redirect(result.redirectUrl);
-// }
 async function getRedirectUrl(req, res) {
 	const reqUrl = req.params.shortUrl;
 	const result = await URL.findOneAndUpdate({

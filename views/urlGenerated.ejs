@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chirkut</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif; /* Google's Noto Sans font */
+            font-weight: bolder;
+            background-color: #f3f3f3;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Add some animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design */
+        @media only screen and (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+        }
+
+        /* Apply animations */
+        body, p {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Add emojis */
+        h1::after {
+            content: " 😎"; /* Cool sunglasses emoji */
+        }
+
+        p::before {
+            content: "🚀 "; /* Rocket emoji */
+        }
+
+    </style>
+
+</head>
+<body>
+
+<% if (locals.shortId) { %>
+    <p>Redirect Url : <a href="http://localhost:<%= PORT %>/api/v1/url/<%= locals.shortId %>">http://localhost:<%= PORT %>/api/v1/url/<%= locals.shortId %></a></p>
+<% } %>
+
+</body>
+</html>
