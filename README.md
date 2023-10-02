@@ -1,18 +1,20 @@
 
-# URL-Shortner
+# Chirkut-URL-Shortner
 
 This elegant backend application utilizes the power of **Node.js**, **Express**, and **MongoDB** to effortlessly generate concise and unique **8**-character strings for URL shortening. Additionally, it provides insightful click tracking, allowing you to **monitor the number of clicks** on your shortened URLs.
 
+It takes inspiration from **Jack** to chirkutify the url's.
 
-
-![Display](https://github.com/swastik-akhil/URL-Shortner/assets/126651810/bb2a6b15-53f3-4b0d-b769-251476cc5d76)
+![Display](https://github.com/swastik-akhil/URL-Shortner/assets/126651810/0239646b-0b67-4e89-ac32-3794f7bd6562)
 
 
 ## Authors
 
 - [**@swastik-akhil**](https://www.github.com/swastik-akhil) 
 
+## Credits
 
+- **Frontend**: By using AI and Free Material Source
 
 ## Run Locally
 
