@@ -22,11 +22,15 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            overflow: hidden; /* Prevent overflow of animated shapes */
+            position: relative; /* Establish positioning context for pseudo-elements */
         }
 
         .container {
             text-align: center;
             max-width: 600px;
+            z-index: 2; /* Ensure content is above animated shapes */
+            position: relative; /* Ensure z-index works */
         }
 
         a {
@@ -38,17 +42,50 @@
             text-decoration: underline;
         }
 
-        /* Add some animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
         @keyframes fadeIn {
-            from {
+            0% {
                 opacity: 0;
             }
-            to {
+            100% {
                 opacity: 1;
             }
         }
 
-        /* Responsive design */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: rgba(0, 123, 255, 0.5);
+            animation: float 2s ease-in-out infinite;
+            z-index: 1; /* Ensure circles are behind content */
+        }
+
+        body::before {
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        body::after {
+            bottom: -100px;
+            right: -100px;
+            animation-delay: 0.75s; /* Delay second circle animation */
+        }
+
         @media only screen and (max-width: 600px) {
             body {
                 padding: 20px;
@@ -59,18 +96,8 @@
             }
         }
 
-        /* Apply animations */
         body, p {
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        /* Add emojis */
-        h1::after {
-            content: " 😎"; /* Cool sunglasses emoji */
-        }
-
-        p::before {
-            content: "🚀 "; /* Rocket emoji */
+            animation: fadeIn 3s ease-in-out;
         }
 
     </style>
@@ -79,7 +106,11 @@
 <body>
 
 <% if (locals.shortId) { %>
-    <p>Redirect Url : <a href="http://localhost:<%= PORT %>/api/v1/url/<%= locals.shortId %>">http://localhost:<%= PORT %>/api/v1/url/<%= locals.shortId %></a></p>
+    <div class="container">
+        <p>Redirect Url 🚀</p>
+        <br>
+        <a href="http://localhost:3000/u/<%= locals.shortId %>">http://localhost:3000/u/<%= locals.shortId %></a>
+    </div>
 <% } %>
 
 </body>

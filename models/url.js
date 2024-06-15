@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
 const urlSchema = new mongoose.Schema({
+	
+
 	shortId : {
 		type : String,
 		unique : true,
@@ -9,6 +11,8 @@ const urlSchema = new mongoose.Schema({
 	redirectUrl : {
 		type : String,
 	},
+
+
 	visitHistory : [{
 		timestamps : {
 			type : Number
