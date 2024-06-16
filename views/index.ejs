@@ -405,7 +405,7 @@
     <% allUrl.forEach(url => { %>
         <tr>
             <td class="original-url"><a href="<%= url.redirectUrl %>"><%= url.redirectUrl %></a></td>
-            <td class="short-url"><a href="http://localhost:<%= PORT %>/api/v1/url/<%= url.shortId %>">http://localhost:<%= PORT %>/api/v1/url/<%= url.shortId %></a></td>
+            <td class="short-url"><a href="https://chirkut.akhilcodes.co/api/v1/url/<%= url.shortId %>">https://chirkut.akhilcodes.co/api/v1/url//<%= url.shortId %></a></td>
             <td><%= url.visitHistory.length %></td>
         </tr>
     <% }) %>
