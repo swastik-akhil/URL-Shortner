@@ -17,8 +17,8 @@ app.use(express.urlencoded({extended : true}));
 
 //routers
 const urlRouter = require('./routes/url')
-app.use('/api/v1/url', urlRouter);
-app.use('/api/v1/url/:shortUrl', urlRouter);
+app.use('/u', urlRouter);
+
 app.get('/', async (req,res)=>{
 	const allUrl = await URL.find({})
 	return res.render('index', {
@@ -26,15 +26,6 @@ app.get('/', async (req,res)=>{
 		PORT : PORT
 	})
 })
-
-
-
-
-
-
-
-
-
 
 
 

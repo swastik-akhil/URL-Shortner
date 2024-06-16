@@ -386,7 +386,7 @@
 <p><b>Jack</b>: Oggy ye to chirkut h, ise to main tod dunga, fod dunga neebu ke jaise nichod dunga</p>
 
 <div class="form-container">
-    <form  action="/api/v1/url/:shortUrl" method="POST">
+    <form  action="/u" method="POST">
         <label class="form-text" for="urlInput">Enter URL&#x1F447;</label>
         <input type="text" id="urlInput" name="url" placeholder="Url Cutter &#x2702;" required>
         <button class="vibrate-1" type="submit" class="btn-animated">Shorten URL</button>
@@ -405,7 +405,7 @@
     <% allUrl.forEach(url => { %>
         <tr>
             <td class="original-url"><a href="<%= url.redirectUrl %>"><%= url.redirectUrl %></a></td>
-            <td class="short-url"><a href="https://chirkut.akhilcodes.co/api/v1/url/<%= url.shortId %>">https://chirkut.akhilcodes.co/api/v1/url//<%= url.shortId %></a></td>
+            <td class="short-url"><a href="https://chirkut.akhilcodes.co/u/<%= url.shortId %>">https://chirkut.akhilcodes.co/u/<%= url.shortId %></a></td>
             <td><%= url.visitHistory.length %></td>
         </tr>
     <% }) %>
