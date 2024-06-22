@@ -386,11 +386,29 @@
 <p><b>Jack</b>: Oggy ye to chirkut h, ise to main tod dunga, fod dunga neebu ke jaise nichod dunga</p>
 
 <div class="form-container">
-    <form  action="/u" method="POST">
+    <form action="/u" method="POST" onsubmit="return validateForm()">
         <label class="form-text" for="urlInput">Enter URL&#x1F447;</label>
-        <input type="text" id="urlInput" name="url" placeholder="Url Cutter &#x2702;" required>
+        <input type="url" id="urlInput" name="url" placeholder="Url Cutter &#x2702;" required>
         <button class="vibrate-1" type="submit" class="btn-animated">Shorten URL</button>
     </form>
+
+    <script>
+        function validateForm() {
+            var urlInput = document.getElementById('urlInput');
+            var url = urlInput.value.trim();
+    
+            var urlPattern = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
+            
+            if (!urlPattern.test(url)) {
+                alert("Please enter a valid URL.");
+                return false;
+            }
+    
+            
+            return true;
+        }
+    </script>
+
 </div>
 
 <table>
@@ -411,6 +429,7 @@
     <% }) %>
     </tbody>
 </table>
+
 
 
 </body>
